@@ -2,10 +2,10 @@
 cd ~
 if [ -f "/usr/local/bin/python3.12" ];then
     if [ ! -f "/usr/bin/python" ];then
-        sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
+        ln -sf /usr/local/bin/python3.12 /usr/bin/python
     fi
     if [ ! -f "/usr/bin/pip" ];then
-        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
+        ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
     fi
     echo "Python已安装"
     if [ ! -d ".venv" ];then
@@ -34,8 +34,8 @@ if [ -f "/usr/local/bin/python3.12" ];then
     echo "文件不存在"
     if [ "$1" == "" ];then
         # 安装编译Python所需的依赖
-        sudo apt-get update -y
-        sudo apt-get install -y wget build-essential libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev 
+        apt-get update -y
+        apt-get install -y wget build-essential libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev 
         mkdir ~/python-compile
         cd ~/python-compile
     
@@ -56,7 +56,7 @@ if [ -f "/usr/local/bin/python3.12" ];then
     
         # 编译并安装
         make -j $(nproc)  # 使用所有可用的核心进行编译
-        sudo make altinstall  # 使用altinstall避免替换默认python命令
+        make altinstall  # 使用altinstall避免替换默认python命令
     
         # 返回到家目录并清理临时文件
         cd ~
@@ -69,14 +69,14 @@ if [ -f "/usr/local/bin/python3.12" ];then
     
         rm /usr/local/bin/python
     
-        sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
-        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
+        ln -sf /usr/local/bin/python3.12 /usr/bin/python
+        ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
         echo "Python 3.12 安装完成。已创建软链接。"
         else
         tar -xvf $1 -C /usr/local/
         rm $1
-        sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
-        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
+        ln -sf /usr/local/bin/python3.12 /usr/bin/python
+        ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
     fi
     mkdir .venv
 
