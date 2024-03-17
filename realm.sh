@@ -9,16 +9,16 @@ if [ -f "/usr/bin/python" ];then
         cd .venv
 
         source ./bin/activate
-        pip install requests
-        pip install psutil
+        pip install requests > /dev/nell
+        pip install psutil > /dev/nell
         wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
         python realm.py
         else
         echo "文件夹已经存在"
         cd .venv
         source ./bin/activate
-        pip install requests
-        pip install psutil
+        pip install requests > /dev/nell
+        pip install psutil > /dev/nell
         if [ -f "realm.py" ];then
             echo "脚本存在"
             python realm.py
@@ -80,8 +80,8 @@ if [ -f "/usr/bin/python" ];then
     cd .venv
 
     source ./bin/activate
-    pip install requests
-    pip install psutil
+    pip install requests  > /dev/nell
+    pip install psutil  > /dev/nell
     wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
     python realm.py
 
