@@ -25,8 +25,12 @@ if [ -f "/usr/local/bin/python3.12" ];then
         source ./bin/activate
         pip install requests > /dev/nell
         pip install psutil > /dev/nell
-        wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
-        python realm.py
+        if [ ! -f "realm.py" ]
+            wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
+            python realm.py
+            else
+            python realm.py
+        fi
     fi
 
     
