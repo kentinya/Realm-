@@ -36,6 +36,18 @@ rm -rf ~/python-compile
 # 检测安装的Python版本并创建软链接
 PYTHON_VERSION=$(echo $PYTHON_LATEST | grep -oP '\d+\.\d+')
 
+rm /usr/local/bin/python
+
 sudo ln -sf /usr/local/bin/python3.12 /usr/local/bin/python
 
 echo "Python 3.12 安装完成。已创建软链接。"
+
+mkdir .venv
+
+python -m venv .venv
+
+cd .venv
+
+source ./bin/activate
+
+
