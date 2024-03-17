@@ -459,7 +459,6 @@ def update_realm():
         os.chmod(base_path, 0o755) #调整权限
         print("Realm升级完成！")
         subprocess.run(['sudo', 'systemctl', 'start', 'realm.service'])
-        subprocess.run(['sudo', 'systemctl', 'enable', 'realm.service', '>>', '/dev/null'])
         time.sleep(0.3)
         print("Realm重启完成！请按任意键继续")
 
