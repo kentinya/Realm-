@@ -3,6 +3,7 @@ cd ~
 if [ -f "/usr/local/bin/python3.12" ];then
     if [ ! -f "/usr/bin/python" ];then
     sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
+    sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
     fi
     echo "Python已安装"
     if [ ! -d ".venv" ];then
@@ -74,12 +75,13 @@ if [ -f "/usr/local/bin/python3.12" ];then
         rm /usr/local/bin/python
     
         sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
-    
+        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
         echo "Python 3.12 安装完成。已创建软链接。"
         else
         tar -xvf $1 -C /usr/local/
         rm $1
         sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
+        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
     fi
     mkdir .venv
 
