@@ -511,12 +511,10 @@ def main_tab(latest_version):
     return usr_input
 
 
-location = check_location()
 subprocess.run('clear')
 check_pythonversion()
 
-status = location[0]
-latest_version = location[1]
+latest_version = check_location()
 usr_input = main_tab(latest_version)
 
 while usr_input != '':
