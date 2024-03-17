@@ -46,7 +46,7 @@ if [ -f "/usr/local/bin/python3.12" ];then
     PYTHON_URL="https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz"
 
     # 下载最新版本的Python源码
-    wget $PYTHON_URL
+    wget -N $PYTHON_URL
 
     # 解压源码
     tar -xvf Python-3.12.2.tgz
