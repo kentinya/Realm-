@@ -106,16 +106,16 @@ def install():
     """
     with open('/etc/systemd/system/realm.service', 'w') as service_file:
         service_file.write(servce_config)
-    subprocess.run(['sudo', 'systemctl', 'daemon-reload'])
-    subprocess.run(['sudo', 'systemctl', 'enable', 'realm.service'])
+    subprocess.run(['systemctl', 'daemon-reload'])
+    subprocess.run(['systemctl', 'enable', 'realm.service'])
     input("安装完成！按任意键继续...")
 
 def uninstall():
-    subprocess.run(['sudo', 'systemctl', 'stop', 'realm.service'])
-    subprocess.run(['sudo', 'systemctl', 'disable', 'realm.service'])
-    subprocess.run(['sudo', 'rm', '-rf', '/opt/realm/'])
-    subprocess.run(['sudo', 'rm', '-rf', '/etc/systemd/system/realm.service'])
-    subprocess.run(['sudo', 'systemctl', 'daemon-reload'])
+    subprocess.run(['systemctl', 'stop', 'realm.service'])
+    subprocess.run(['systemctl', 'disable', 'realm.service'])
+    subprocess.run(['rm', '-rf', '/opt/realm/'])
+    subprocess.run(['rm', '-rf', '/etc/systemd/system/realm.service'])
+    subprocess.run(['systemctl', 'daemon-reload'])
     print("卸载完成，可以删除本脚本：rm -rf realm.py")
 
 
@@ -140,14 +140,14 @@ def is_process_running(process_name):
 
 
 def stop():
-    subprocess.run(['sudo', 'systemctl', 'stop', 'realm.service'])
+    subprocess.run(['systemctl', 'stop', 'realm.service'])
     time.sleep(0.5)
     if not is_process_running("realm"):
         input("Realm停止成功，按任意键继续...")
 
 
 def start():
-    subprocess.run(['sudo', 'systemctl', 'start', 'realm.service'])
+    subprocess.run(['systemctl', 'start', 'realm.service'])
     time.sleep(0.5)
     if is_process_running("realm"):
         input("Realm启动成功，按任意键继续...")
@@ -161,7 +161,7 @@ def show_log():
 
 
 def restart():
-    subprocess.run(['sudo', 'systemctl', 'restart', 'realm.service'])
+    subprocess.run(['systemctl', 'restart', 'realm.service'])
     time.sleep(0.5)
     print("Realm服务重启成功！按任意键继续...")
 
@@ -211,7 +211,7 @@ def del_config():
         time.sleep(0.5)
         print("规则删除完成")
         time.sleep(0.3)
-        #restart()
+        restart()
         print("Realm服务重启成功！")
     else:
         print("暂无规则")
@@ -402,7 +402,9 @@ def add_config():
             continue
     with open(file_name, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=2, ensure_ascii=False) 
-
+    restart()
+    time.sleep(0.5)
+    print("Realm重启成功")
 
 def update_realm():
     subprocess.run(['sudo', 'systemctl', 'stop', 'realm.service'])
