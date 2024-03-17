@@ -407,7 +407,7 @@ def add_config():
     print("Realm重启成功")
 
 def update_realm():
-    subprocess.run(['sudo', 'systemctl', 'stop', 'realm.service'])
+    subprocess.run(['systemctl', 'stop', 'realm.service'])
     time.sleep(0.5)
     if not is_process_running("realm"):
         print("停止Realm成功")
@@ -417,7 +417,7 @@ def update_realm():
     if not os.path.exists(os.path.dirname(base_path)):
         print("检查Realm是否已安装")
     else:
-        subprocess.run(['sudo', 'rm', '-rf', '/opt/realm/realm'])
+        subprocess.run(['rm', '-rf', '/opt/realm/realm'])
         time.sleep(0.5)
         print("删除Realm旧版本")
         #os_type = platform.system()
@@ -460,7 +460,7 @@ def update_realm():
                 break
         os.chmod(base_path, 0o755) #调整权限
         print("Realm升级完成！")
-        subprocess.run(['sudo', 'systemctl', 'start', 'realm.service'])
+        subprocess.run(['systemctl', 'start', 'realm.service'])
         time.sleep(0.3)
         print("Realm重启完成！请按任意键继续")
 
