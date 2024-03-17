@@ -9,5 +9,5 @@
 - 启动与查看日志
 ### 使用
 ```bash
-wget 
+wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/python_install.sh && bash python_install.sh
 ```
