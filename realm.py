@@ -466,20 +466,20 @@ def update_realm():
 
 
 def check_location():
-    if is_process_running("realm"):
-        status = "Realm运行状态：已运行"
-    else:
-        status = "Realm运行状态：未运行"
     if is_ip_in_china() == '中国':
         latest = input("当前ip位于中国，请手动指定Realm版本：")
         latest_version = latest[1:]
     else:
         latest = requests.get("https://api.github.com/repos/zhboner/realm/releases/latest")
         latest_version = latest.json()["tag_name"][1:]
-    return status,latest_version
+    return latest_version
 
 
-def main_tab(status,latest_version):
+def main_tab(latest_version):
+    if is_process_running("realm"):
+        status = "Realm运行状态：已运行"
+    else:
+        status = "Realm运行状态：未运行"
     local_version = "Realm未安装"
     if os.path.exists("/opt/realm/realm"):
         result = subprocess.run(['/opt/realm/realm', '-v'], capture_output=True, text=True)
@@ -517,70 +517,70 @@ check_pythonversion()
 
 status = location[0]
 latest_version = location[1]
-usr_input = main_tab(status,latest_version)
+usr_input = main_tab(latest_version)
 
 while usr_input != '':
     if usr_input == '0':
         update_realm()
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue    
     if usr_input == '1':
         install()
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue    
         #pass
     elif usr_input == '2':
         uninstall()
         time.sleep(0.5)
         input("按任意键继续...")
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue    
     elif usr_input == '3':
         add_config()
         time.sleep(0.5)
         input("按任意键继续...")
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue    
     elif usr_input == '4':
         del_config()
         time.sleep(0.5)
         input("按任意键继续...")
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue   
     elif usr_input == '5':
         start()
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue
     elif usr_input == '6':
         stop()
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue 
     elif usr_input == '7':
         show_log()
         time.sleep(0.5)
         input("按任意键继续...")
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue  
     elif usr_input == '8':
         check_status()
         input("按任意键继续...")
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue  
     elif  usr_input == '9':
         restart()
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue
     elif  usr_input == '10':
         show_config()
         time.sleep(0.2)
         input("按任意键继续...")
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         break
     elif  usr_input == '11':
         time.sleep(0.2)
@@ -589,7 +589,7 @@ while usr_input != '':
     else:
         print("输入错误,请重新输入！")
         time.sleep(0.5)
-        usr_input = main_tab(status,latest_version)
+        usr_input = main_tab(latest_version)
         continue
 else:
     print("byebye")
