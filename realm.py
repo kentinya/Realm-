@@ -41,7 +41,7 @@ def install():
         response = requests.get("https://api.github.com/repos/zhboner/realm/releases/latest")
         tar_name = response.json()["tag_name"]
         print("当前最新版本为:",tar_name)   
-        path = "/realm-" + cpu_architecture + "-unknown-linux-gnu.tar.gz"
+        path = "/realm-" + cpu_architecture + "-unknown-linux-musl.tar.gz"
         url = "https://github.com/zhboner/realm/releases/download/" + tar_name + path
         print("正在下载最新Realm")
         file = requests.get(url)
