@@ -6,6 +6,7 @@ if [ -f "/usr/local/bin/python3.12" ];then
     fi
     if [ ! -f "/usr/bin/pip" ];then
     sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
+    fi
     echo "Python已安装"
     if [ ! -d ".venv" ];then
         mkdir .venv
