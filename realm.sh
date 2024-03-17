@@ -26,6 +26,7 @@ if [ -f "/usr/local/bin/python3.12" ];then
         pip install requests > /dev/nell
         pip install psutil > /dev/nell
         wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
+        python realm.py
     fi
 
     
