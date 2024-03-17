@@ -8,7 +8,9 @@
 - 支持证书配置
 - 启动与查看日志
 ### 使用
-```bash
+``` bash
 wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.sh
+```
+``` bash
 bash realm.sh "python二进制包名"
 ```
