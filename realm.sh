@@ -1,6 +1,9 @@
 #!/bin/bash
 cd ~
-if [ -f "/usr/bin/python" ];then
+if [ -f "/usr/local/bin/python3.12" ];then
+    if [ ! -f "/usr/bin/python" ];then
+    sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
+    fi
     echo "Python已安装"
     if [ ! -d ".venv" ];then
         mkdir .venv
