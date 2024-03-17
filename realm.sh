@@ -2,10 +2,10 @@
 cd ~
 if [ -f "/usr/local/bin/python3.12" ];then
     if [ ! -f "/usr/bin/python" ];then
-    sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
+        sudo ln -sf /usr/local/bin/python3.12 /usr/bin/python
     fi
     if [ ! -f "/usr/bin/pip" ];then
-    sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
+        sudo ln -sf /usr/local/bin/pip3.12 /usr/bin/pip
     fi
     echo "Python已安装"
     if [ ! -d ".venv" ];then
