@@ -11,7 +11,7 @@ if [ -f "/usr/bin/python" ];then
         source ./bin/activate
         pip install requests > /dev/nell
         pip install psutil > /dev/nell
-        wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
+        wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
         python realm.py
         else
         echo "文件夹已经存在"
@@ -24,7 +24,7 @@ if [ -f "/usr/bin/python" ];then
             python realm.py
             else
             echo "脚本不存在"
-            wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
+            wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
             python realm.py
         fi
     fi
@@ -82,7 +82,7 @@ if [ -f "/usr/bin/python" ];then
     source ./bin/activate
     pip install requests  > /dev/nell
     pip install psutil  > /dev/nell
-    wget https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
+    wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.py
     python realm.py
 
 fi
