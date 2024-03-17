@@ -476,6 +476,7 @@ def check_location():
 
 
 def main_tab(latest_version):
+    subprocess.run('clear')
     if is_process_running("realm"):
         status = "Realm运行状态：已运行"
     else:
@@ -511,7 +512,7 @@ def main_tab(latest_version):
     return usr_input
 
 
-subprocess.run('clear')
+
 check_pythonversion()
 
 latest_version = check_location()
