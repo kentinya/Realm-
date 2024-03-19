@@ -358,6 +358,7 @@ def add_config():
                         endpoints_config = {"listen":listen,"remote":remote,"remote_transport":remote_transport}
                         endpoints.append(endpoints_config)
                         print("规则添加成功",endpoints[-1])
+                        break
                     break
                 elif method == "2":
                     method = "ws"
@@ -369,25 +370,25 @@ def add_config():
                     print("规则添加成功",endpoints[-1])
                     break
                 elif method == "3":
-                        method_1 = "ws"
-                        method_2 = "tls"
-                        host = input("请输入host:")
-                        path = input("请输入路径（带/）:")
-                        sni = host
-                        while 1:
-                            insecure = input("是否使用证书(y/n,默认为n):")
-                            if insecure == "y": 
-                                remote_transport = method_1 + ";host=" + host + ";path=" + path + ";" + method_2 + ";sni=" + sni
-                            elif insecure == "n" or insecure == "":
-                                remote_transport = method_1 + ";host=" + host + ";path=" + path + ";" + method_2 + ";sni=" + sni + ";insecure"
-                            else:
-                                print("输入错误请重新输入！")
-                                continue
-                            endpoints_config = {"listen":listen,"remote":remote,"remote_transport":remote_transport}
-                            endpoints.append(endpoints_config)
-                            print("规则添加成功",endpoints[-1])
-                            break
+                    method_1 = "ws"
+                    method_2 = "tls"
+                    host = input("请输入host:")
+                    path = input("请输入路径（带/）:")
+                    sni = host
+                    while 1:
+                        insecure = input("是否使用证书(y/n,默认为n):")
+                        if insecure == "y": 
+                            remote_transport = method_1 + ";host=" + host + ";path=" + path + ";" + method_2 + ";sni=" + sni
+                        elif insecure == "n" or insecure == "":
+                            remote_transport = method_1 + ";host=" + host + ";path=" + path + ";" + method_2 + ";sni=" + sni + ";insecure"
+                        else:
+                            print("输入错误请重新输入！")
+                            continue
+                        endpoints_config = {"listen":listen,"remote":remote,"remote_transport":remote_transport}
+                        endpoints.append(endpoints_config)
+                        print("规则添加成功",endpoints[-1])
                         break
+                    break            
                 else:
                     print("输入错误，请重新输入！")
                     continue
