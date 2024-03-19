@@ -580,7 +580,7 @@ while usr_input != '':
         time.sleep(0.2)
         input("按任意键继续...")
         usr_input = main_tab(latest_version)
-        break
+        continue
     elif  usr_input == '11':
         time.sleep(0.2)
         print("byebye")
