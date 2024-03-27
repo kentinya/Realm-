@@ -29,11 +29,12 @@ pre_check() {
     fi
     if [ ! -d "$RM_BASE_PATH" ];then
         exixt="${red}未安装${plain}"
+        local_version=""
         else
         if [ ! -f "$RM_BASE_PATH/realm" ];then
             exixt="${red}未安装${plain}"
-            else
             local_version=""
+            else
             local_version="$(/opt/realm/realm -v | awk -F " " '{print $2}')"
             exixt="${green}$(/opt/realm/realm -v | awk -F " " '{print $2}')${plain}"
         fi
