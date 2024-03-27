@@ -81,7 +81,6 @@ change_config(){
 
 
 install_realm(){
-    install_base
     if [[ ${os_arch} == "unknown" ]];then
         echo -e "${red}暂不支持此架构二进制安装，请使用源码编译安装到${RM_BASE_PATH}目录${plain}"
         else
@@ -162,6 +161,7 @@ install_realm(){
 
 
 update_realm(){
+    install_base
     if [ ! -d "$RM_BASE_PATH" ];then
         echo -e "${red}realm未安装，请先安装realm${plain}"
         else
