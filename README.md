@@ -9,5 +9,5 @@
 - 启动与查看日志
 ### 使用
 ``` bash
-wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.sh
+wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.sh && bash realm.sh
 ```
