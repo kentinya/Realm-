@@ -11,6 +11,3 @@
 ``` bash
 wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.sh
 ```
-``` bash
-bash realm.sh "python二进制包名"
-```
