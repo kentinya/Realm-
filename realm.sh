@@ -33,6 +33,7 @@ pre_check() {
         if [ ! -f "$RM_BASE_PATH/realm" ];then
             exixt="${red}未安装${plain}"
             else
+            local_version=""
             local_version="$(/opt/realm/realm -v | awk -F " " '{print $2}')"
             exixt="${green}$(/opt/realm/realm -v | awk -F " " '{print $2}')${plain}"
         fi
@@ -82,7 +83,7 @@ install_realm(){
     if [[ ${os_arch} == "unknown" ]];then
         echo -e "${red}暂不支持此架构二进制安装，请使用源码编译安装到${RM_BASE_PATH}目录${plain}"
         else
-        if [[ ! -z "${local_version}" ]]; then
+        if [[ $local_version != "" ]]; then
             echo -e "${red}您可能已经安装过Realm，当前版本为：${local_version}${plain}"
             echo "退出安装"
             else
