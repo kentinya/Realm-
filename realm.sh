@@ -53,6 +53,7 @@ pre_check() {
     if [ ! -f "$RM_BASE_PATH/del_config.py" ];then
         add_del_config_py
     fi
+    install_base
 }
 
 
@@ -89,7 +90,6 @@ install_realm(){
             echo "退出安装"
             else
             echo -e "> 安装Realm"
-            install_base
             new_version=$(curl -sL --retry 2 --connect-timeout 2 https://api.github.com/repos/zhboner/realm/releases/latest | jq -r '.tag_name')
             if [ ! -n "$new_version" ]; then
                 echo -e "${red}最新版本获取失败，请检查本机能否链接 api.github.com${plain}"
@@ -161,7 +161,6 @@ install_realm(){
 
 
 update_realm(){
-    install_base
     if [ ! -d "$RM_BASE_PATH" ];then
         echo -e "${red}realm未安装，请先安装realm${plain}"
         else
