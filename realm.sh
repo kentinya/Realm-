@@ -64,9 +64,9 @@ before_show_menu() {
 
 
 install_soft() {
-    (command -v yum >/dev/null 2>&1 && yum makecache && yum install $* selinux-policy -y) ||
-        (command -v apt >/dev/null 2>&1 && apt update && apt install $* selinux-utils -y) ||
-        (command -v apt-get >/dev/null 2>&1 && apt-get update && apt-get install $* selinux-utils -y)
+    (command -v yum >/dev/null 2>&1 && yum makecache >/dev/null 2>&1 && yum install $* selinux-policy -y) ||
+        (command -v apt >/dev/null 2>&1 && apt update >/dev/null 2>&1 && apt install $* selinux-utils -y) ||
+        (command -v apt-get >/dev/null 2>&1 && apt-get update >/dev/null 2>&1 && apt-get install $* selinux-utils -y)
 }
 
 
@@ -101,7 +101,7 @@ install_realm(){
             cd $RM_BASE_PATH
             if [[ ${os_arch} == "arm" ]];then
                 path="realm.tar.gz"
-                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-gnueabihf.tar.gz -O realm.tar.gz
+                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musleabi.tar.gz -O realm.tar.gz
                 if [[ $? != 0 ]]; then
                     echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                     read -e -r -p "请手动文件路径(完整路径)：" input
@@ -109,7 +109,7 @@ install_realm(){
                 fi
                 else
                 path="realm.tar.gz"
-                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-gnu.tar.gz -O realm.tar.gz
+                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musl.tar.gz -O realm.tar.gz
                 if [[ $? != 0 ]]; then
                     echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                     read -e -r -p "请手动文件路径(完整路径)：" input
@@ -186,7 +186,7 @@ update_realm(){
                 echo "删除realm" && rm realm
                 if [[ ${os_arch} == "arm" ]];then
                     path="realm.tar.gz"
-                    wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-gnueabihf.tar.gz -O realm.tar.gz
+                    wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musleabi.tar.gz -O realm.tar.gz
                     if [[ $? != 0 ]]; then
                         echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                         read -e -r -p "请手动文件路径(完整路径)：" input
@@ -194,7 +194,7 @@ update_realm(){
                     fi
                     else
                     path="realm.tar.gz"
-                    wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-gnu.tar.gz -O realm.tar.gz
+                    wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musl.tar.gz -O realm.tar.gz
                     if [[ $? != 0 ]]; then
                         echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                         read -e -r -p "请手动文件路径(完整路径)：" input
