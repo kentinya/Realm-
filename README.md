@@ -9,18 +9,18 @@
 - 启动与查看日志
 ### 使用
 ``` bash
-
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/Realm/realm.sh && chmod +x realm.sh
 ```
 ``` bash
-
+bash realm.sh
 ```
 ## 增加虚拟内存脚本
 ### 功能
 - 增加VPS虚拟内存
 ### 使用
 ```bash
-
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/addswap/addswap.sh && chmod +x addswap.sh
 ```
 ``` bash
-
+bash addswap.sh
 ```
