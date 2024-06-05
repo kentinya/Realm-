@@ -29,11 +29,15 @@ fi
 COUNTRY=$(echo "$RESPONSE" | jq -r '.country_name')
 REGION=$(echo "$RESPONSE" | jq -r '.region_name')
 CITY=$(echo "$RESPONSE" | jq -r '.city_name')
-ISP=$(echo "$RESPONSE" | jq -r '.isp')
+ASN=$(echo "$RESPONSE" | jq -r '.asn')
+AS=$(echo "$RESPONSE" | jq -r '.as')
+Proxy=$(echo "$RESPONSE" | jq -r '.is_proxy')
 
 # 输出结果
 echo "IP 地址: $IP"
 echo "国家: $COUNTRY"
 echo "地区: $REGION"
 echo "城市: $CITY"
-echo "ISP: $ISP"
+echo "ASN: $ASN"
+echo "AS: $AS"
+echo "Proxy: $Proxy"
