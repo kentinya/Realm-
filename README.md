@@ -1,4 +1,4 @@
-# Realm---转发脚本
+## Realm转发脚本使用
 ### 功能
 - 一键添加配置
 - 一键安装、更新、删除Realm
@@ -9,5 +9,18 @@
 - 启动与查看日志
 ### 使用
 ``` bash
-wget -N https://raw.githubusercontent.com/kentinya/Realm-mangescript/main/realm.sh && bash realm.sh
+
+```
+``` bash
+
+```
+## 增加虚拟内存脚本
+### 功能
+- 增加VPS虚拟内存
+### 使用
+```bash
+
+```
+``` bash
+
 ```
