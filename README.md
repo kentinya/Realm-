@@ -31,7 +31,7 @@ bash addswap.sh
 
 ### 使用
 ```bash
-wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/addswap/addswap.sh && chmod +x checkip.sh
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/ip2location/checkip.sh && chmod +x checkip.sh
 ```
 ``` bash
 bash checkip.sh
