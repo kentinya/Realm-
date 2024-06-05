@@ -24,3 +24,15 @@ wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/addswa
 ``` bash
 bash addswap.sh
 ```
+
+## ip2location判断ip
+### 功能
+- 判断ip
+
+### 使用
+```bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/addswap/addswap.sh && chmod +x checkip.sh
+```
+``` bash
+bash checkip.sh
+```
