@@ -43,5 +43,8 @@ bash checkip.sh
 
 ### 使用
 ```bash
-
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_strm/create_strm.py && chmod +x create_strm.py
+```
+``` bash
+python3 create_strm.py "保存路径" "内容路径" "分类"
 ```
