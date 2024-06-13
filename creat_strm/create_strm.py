@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import sys
-import subprocess
 
 # 从命令行参数获取下载根目录、文件/文件夹名称和种子分类
 
