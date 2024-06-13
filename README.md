@@ -36,3 +36,15 @@ wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/ip2loc
 ``` bash
 bash checkip.sh
 ```
+## 生成strm文件
+
+### 功能
+- 根据分类、文件路径和根路径自动生成strm文件到指定文件夹
+
+### 使用
+```bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_strm/create_strm.py && chmod +x create_strm.py
+```
+``` bash
+python3 create_strm.py "保存路径" "内容路径" "分类"
+```
