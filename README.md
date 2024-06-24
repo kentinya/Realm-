@@ -48,3 +48,18 @@ wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_
 ``` bash
 python3 create_strm.py "保存路径" "内容路径" "分类"
 ```
+
+## 修改strm内容
+
+### 功能
+
+-  修改strm文件内的路径
+
+### 使用
+
+```bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_strm/replace_str_in_strm.sh && chmod +x replace_str_in_strm.sh
+```
+```bash
+bash replace_str_in_strm.sh
+```
