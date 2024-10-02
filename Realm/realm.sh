@@ -44,15 +44,6 @@ pre_check() {
         else
         status="${red}未运行${plain}"
     fi
-    if [ ! -f "$RM_BASE_PATH/add_config.py" ];then
-        add_add_config_py
-    fi
-    if [ ! -f "$RM_BASE_PATH/show_config.py" ];then
-        add_show_config_py
-    fi
-    if [ ! -f "$RM_BASE_PATH/del_config.py" ];then
-        add_del_config_py
-    fi
     install_base
 }
 
