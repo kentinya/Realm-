@@ -63,3 +63,22 @@ wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_
 ```bash
 bash replace_str_in_strm.sh
 ```
+
+## gost转发脚本使用
+
+### 安装
+``` bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/refs/heads/main/gost/gost_install.sh && chmod +x gost_install.sh
+```
+``` bash
+bash gost_install.sh
+```
+
+### 节点
+
+``` bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/refs/heads/main/gost/add_gost.sh && chmod +x add_gost.sh
+```
+``` bash
+bash add_gost.sh
+```
