@@ -13,9 +13,9 @@ if [ -n "$mode" ];then
 fi
 
 install_soft() {
-    (command -v yum >/dev/null 2>&1 && yum makecache >/dev/null 2>&1 && yum install "$*" selinux-policy -y) ||
-        (command -v apt >/dev/null 2>&1 && apt update >/dev/null 2>&1 && apt install "$*" selinux-utils -y) ||
-        (command -v apt-get >/dev/null 2>&1 && apt-get update >/dev/null 2>&1 && apt-get install "$*" selinux-utils -y)
+    (command -v yum >/dev/null 2>&1 && yum makecache >/dev/null 2>&1 && yum install $* selinux-policy -y) ||
+        (command -v apt >/dev/null 2>&1 && apt update >/dev/null 2>&1 && apt install $* selinux-utils -y) ||
+        (command -v apt-get >/dev/null 2>&1 && apt-get update >/dev/null 2>&1 && apt-get install $* selinux-utils -y)
 }
 
 
@@ -23,7 +23,6 @@ install_base() {
     (command -v git >/dev/null 2>&1 && command -v curl >/dev/null 2>&1 && command -v wget >/dev/null 2>&1 && command -v unzip >/dev/null 2>&1 && command -v getenforce >/dev/null 2>&1 && command -v python3 >/dev/null 2>&1 && command -v jq >/dev/null 2>&1 && command -v tar >/dev/null 2>&1) ||
         (install_soft curl wget git unzip python3 jq tar )
 }
-
 
 
 pre_check() {
