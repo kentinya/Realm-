@@ -63,3 +63,13 @@ wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/creat_
 ```bash
 bash replace_str_in_strm.sh
 ```
+
+## gost转发脚本使用
+
+### 安装
+``` bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/Realm/realm.sh && chmod +x realm.sh
+```
+``` bash
+bash realm.sh
+```
