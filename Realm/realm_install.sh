@@ -32,9 +32,9 @@ pre_check() {
     [[ $EUID -ne 0 ]] && echo -e "${red}错误: ${plain} 必须使用root用户运行此脚本！\n" && exit 1
     ## os_arch
     if [[ $(uname -m | grep 'x86_64') != "" ]]; then
-        os_arch="amd64"
+        os_arch="x86_64"
     elif [[ $(uname -m | grep 'arm') != "" ]]; then
-        os_arch="arm64"
+        os_arch="arm"
     fi
     if [[ ${os_arch} == "unknown" ]];then
         echo -e "${red}暂不支持此架构${plain}"
