@@ -7,12 +7,19 @@
 - 支持tls,ws,wss加密
 - 支持证书配置
 - 启动与查看日志
-### 使用
+### 安装脚本使用
 ``` bash
-wget -N https://raw.githubusercontent.com/kentinya/Script-repository/main/Realm/realm.sh && chmod +x realm.sh
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/refs/heads/main/Realm/realm_install.sh && chmod +x realm_install.sh
 ```
 ``` bash
-bash realm.sh
+bash realm_install.sh
+```
+### 添加tls
+```bash
+wget -N https://raw.githubusercontent.com/kentinya/Script-repository/refs/heads/main/Realm/realm_tls.sh && chmod +x realm_tls.sh
+```
+``` bash
+bash realm_tls.sh
 ```
 ## 增加虚拟内存脚本
 ### 功能
