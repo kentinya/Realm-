@@ -83,7 +83,7 @@ install_realm(){
         fi 
         if [ ! -n "$path" ]; then
             path="realm.tar.gz"
-            wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musleabi.tar.gz -O realm.tar.gz
+            wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musl.tar.gz -O realm.tar.gz
             if [[ $? != 0 ]]; then
                 echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                 read -e -r -p "请手动文件路径(完整路径)：" input
@@ -136,7 +136,7 @@ update_realm(){
                 rm -rf $RM_BASE_PATH/realm
                 echo "删除realm" 
                 path="realm.tar.gz"
-                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musleabi.tar.gz -O realm.tar.gz
+                wget -t 1 -T 10 https://github.com/zhboner/realm/releases/download/${new_version}/realm-${os_arch}-unknown-linux-musl.tar.gz -O realm.tar.gz
                 if [[ $? != 0 ]]; then
                     echo -e "${red}文件下载失败，请检查本机能否连接 ${GITHUB_RAW_URL}${plain}"
                     read -e -r -p "请手动文件路径(完整路径)：" input
