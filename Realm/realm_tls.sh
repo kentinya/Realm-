@@ -33,7 +33,7 @@ LimitCORE=infinity
 LimitNOFILE=102400
 LimitNPROC=102400
 TimeoutStartSec=5
-ExecStart=/opt/realm/realm -l ${Listen_IP}:${LOCAL_PORT} -r ${FORWARD_IP}:${FORWARD_PORT} -a tls;servername=apple.com
+ExecStart=/opt/realm/realm -l ${Listen_IP}:${LOCAL_PORT} -r ${FORWARD_IP}:${FORWARD_PORT} -a tls;servername=apple.com -u
 ExecReload=/bin/kill -HUP 
 ExecStop=/bin/kill 
 Restart=on-failure
@@ -77,7 +77,7 @@ LimitCORE=infinity
 LimitNOFILE=102400
 LimitNPROC=102400
 TimeoutStartSec=5
-ExecStart=/opt/realm/realm -l ${Listen_IP}:${LOCAL_PORT} -r ${FORWARD_IP}:${FORWARD_PORT} -b tls;sni=apple.com;insecure 
+ExecStart=/opt/realm/realm -l ${Listen_IP}:${LOCAL_PORT} -r ${FORWARD_IP}:${FORWARD_PORT} -b tls;sni=apple.com;insecure -u 
 ExecReload=/bin/kill -HUP 
 ExecStop=/bin/kill 
 Restart=on-failure
@@ -113,9 +113,11 @@ show_menu() {
     echo -e "
   ${green}realm直接转发${plain} 
 
-  ${green}1.${plain}  添加 转发
+  ${green}1.${plain}  添加 加密转发
 
-  ${green}2.${plain}  删除 转发
+  ${green}2.${plain}  添加 解密转发
+
+  ${green}3.${plain}  删除 转发
 
   ${green}0.${plain} 退出脚本
 
