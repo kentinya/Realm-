@@ -9,7 +9,7 @@ FORWARD_IP=$3
 FORWARD_PORT=$4
 Listen_IP=$5
 
-forward_l(){
+forward_r(){
 if [ -z "$LOCAL_PORT" ]; then
     read -p "请输入本地IP (Listen_IP): " Listen_IP
     read -p "请输入本地端口 (LOCAL_PORT): " LOCAL_PORT
@@ -53,7 +53,7 @@ systemctl start realm${LOCAL_PORT}
 systemctl status realm${LOCAL_PORT}
 }
 
-forward_r(){
+forward_l(){
 if [ -z "$LOCAL_PORT" ]; then
     read -p "请输入本地IP (Listen_IP): " Listen_IP
     read -p "请输入本地端口 (LOCAL_PORT): " LOCAL_PORT
