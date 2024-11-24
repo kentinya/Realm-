@@ -3,7 +3,7 @@
 red='\033[0;31m'
 green='\033[0;32m'
 plain='\033[0m'
-RM_BASE_PATH="/opt/gost"
+RM_BASE_PATH="/opt/realm"
 os_arch="unknown"
 new_version=$2
 path=$3
@@ -194,7 +194,7 @@ show_menu() {
 
   ${green}0.${plain} 退出脚本
 
-  gost版本：${exixt}
+  realm版本：${exixt}
     "
     echo && read -ep "请输入选择 [0-13]: " num
     case "${num}" in
